@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+
+
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <link rel = "stylesheet"
+          href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel = "stylesheet"
+          href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type = "text/javascript"
+            src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+    </script>
+
+    <link rel="stylesheet" href="css/style.css"/>
+    <script  src="js/script.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('select').material_select();
+        });
+    </script>
+
+
+
+</head>
+
+
+<body>
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+
+    <h4>Databases :</h4>
+    <div id="DBList" class="input-field col s12">
+        <select name="DB" id="DBSelect">
+            <option value="" disabled selected>Select your DataBase</option>
+            <option value="DB_1">DB 1</option>
+            <option value="DB_2">DB 2</option>
+
+         <!--   <%@ page import="java.util.*" %>>
+            <%
+            ArrayList<String> DBs = (ArrayList<String>) request.getAttribute("DBs");
+
+            for(int i = 0;i<DBs.size();i++){
+            out.println("<option value="+DBs.get(i)+">"+DBs.get(i)+"</option>");
+            }
+            %>  -->
+        </select>
+    </div>
+
+    <br>
+    <h4>Request type :</h4>
+    <div id="requestType">
+        <p>
+            <label>
+                <input id="choice_1" name="RequestType" type="radio" value="Spatiale" checked />
+                <label for="choice_1">Spatiale<label>
+                </label>
+        </p>
+        <p>
+            <label>
+                <input id="choice_2" name="RequestType" type="radio" value="Attributaire" />
+                <label for="choice_2">Attributaire </label>
+            </label>
+        </p>
+    </div>
+
+    <br><br>
+    <div id="where">
+        <h4>Make ur conditions</h4> <br> <br>
+        <div id="conditions">
+            <div id=divCond1'>
+                <h6>Condition 1 : </h6>
+                <input id="condition1" type="text" name='+value+'[]>
+            </div>
+        </div>
+        <button type="button" class="btn waves-effect waves-light" id="add" >Add More</button>
+        <button type="button" class="btn waves-effect red accent-4" id="remove" >Remove</button>
+    </div>
+
+
+
+</div>
+
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+<div id="main">
+    <h2>Home</h2>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+</div>
+
+</body>
+</html>
